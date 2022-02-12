@@ -156,7 +156,7 @@ void run_server(const std::string& call)
 
     std::cout << "Setting up host..." << std::endl;
 
-    if (!hq.setup(socket_config().set_port(my_port))) {
+    if (!hq.setup(socket_config().set_port(my_port).set_family(socket_config::e_family::IPV6))) {
         std::cout << "Can't configure TCP host properly." << std::endl;
         std::this_thread::sleep_for(std::chrono::seconds(5));
         return;
