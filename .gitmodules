@@ -1,0 +1,6 @@
+[submodule "libs/Lunaris/Process"]
+	path = libs/Lunaris/Process
+	url = https://www.github.com/Lohkdesgds/Lunaris-Process
+[submodule "libs/Lunaris/Socket"]
+	path = libs/Lunaris/Socket
+	url = https://www.github.com/Lohkdesgds/Lunaris-Socket
