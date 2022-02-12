@@ -1,5 +1,5 @@
-#include <Lunaris/Process/process.h>
 #include <Lunaris/Socket/socket.h>
+#include <Lunaris/Process/process.h>
 
 #include <iostream>
 #include <stdio.h>
@@ -13,7 +13,7 @@
 
 using namespace Lunaris;
 
-const u_short my_port = 25652;
+const u_short my_port = 27015;
 
 void run_client(const std::string&);
 void run_server(const std::string&);
@@ -131,7 +131,7 @@ void run_client(const std::string& ip)
         case pack_type::LPACK_PING:
         {
             const unsigned long long delta = calculate_ms_delay(pkg);
-            std::cout << "[DEBUG] Ping max at: " << (1e-3 * delta) << " ms" << std::endl;
+            if (delta > 1500) std::cout << "[WARN] Ping high: " << (1e-3 * delta) << " s (expected lower than 1 second)" << std::endl;
         }
             break;
         }
